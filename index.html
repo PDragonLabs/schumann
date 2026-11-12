@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schumann Resonance · PDragonLabs</title>
+  <meta name="description" content="Live Schumann Resonance view — Earth’s electromagnetic cavity modes near 7.83 Hz and harmonics. PDragonLabs.">
+  <style>
+    :root {
+      --bg: #0a0614;
+      --surface: #140c22;
+      --text: #e8e0f5;
+      --muted: #9a8bb8;
+      --accent: #c084fc;
+      --accent2: #f0b429;
+      --border: #2a1f3d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(ellipse at top, #1a0f2e 0%, var(--bg) 60%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 3.5rem 1.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(192,132,252,0.15) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin: 0 0 0.4rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .wave {
+      height: 4px;
+      margin: 1.5rem auto 0;
+      width: min(280px, 70%);
+      background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), var(--accent), transparent);
+      border-radius: 2px;
+      opacity: 0.8;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.6rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      color: var(--accent);
+    }
+    .widget-wrap {
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .widget-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 480px;
+      border: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-variant-numeric: tabular-nums;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.55rem 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: var(--muted); font-weight: 500; }
+    .sources a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .sources a:hover { text-decoration: underline; }
+    .sources li { margin: 0.4rem 0; }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    .hz {
+      font-weight: 600;
+      color: var(--accent2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Schumann Resonance</h1>
+    <p class="subtitle">Earth’s electromagnetic cavity · ~7.83 Hz fundamental</p>
+    <div class="wave"></div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Live</h2>
+      <div class="widget-wrap">
+        <iframe src="https://meteoagent.com/widgets/v1/card/schumann_aeo" title="MeteoAgent Schumann Resonance" allowfullscreen></iframe>
+      </div>
+      <p style="margin-bottom:0; font-size:0.9rem; color:var(--muted);">
+        Data card via MeteoAgent. Values shift with ionospheric conditions; “7.83 Hz” is the long-term average of the fundamental mode, not a fixed constant.
+      </p>
+    </section>
+
+    <section>
+      <h2>What it is</h2>
+      <p>The Schumann resonances are a set of peaks in the extremely low frequency (ELF) electromagnetic field spectrum of the Earth–ionosphere cavity. Global lightning continuously excites standing waves in the cavity between the surface and the lower ionosphere (~50–100 km).</p>
+      <p>The fundamental mode is observed near <span class="hz">7.83 Hz</span>. Higher modes appear near 14.3, 20.8, 27.3, and 33.8 Hz. These frequencies move slightly with day/night changes in ionospheric height, geomagnetic activity, and lightning distribution. The signal strength is extremely small (picotesla range).</p>
+      <p>Named after physicist Winfried Otto Schumann, who predicted the resonances in 1952. First measured in the 1960s.</p>
+    </section>
+
+    <section>
+      <h2>Typical modes</h2>
+      <table>
+        <thead>
+          <tr><th>Mode</th><th>Frequency</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 (fundamental)</td><td class="hz">~7.83 Hz</td><td>Strongest, most commonly cited</td></tr>
+          <tr><td>2</td><td class="hz">~14.3 Hz</td><td></td></tr>
+          <tr><td>3</td><td class="hz">~20.8 Hz</td><td></td></tr>
+          <tr><td>4</td><td class="hz">~27.3 Hz</td><td></td></tr>
+          <tr><td>5</td><td class="hz">~33.8 Hz</td><td>Weaker; more variable</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-bottom:0; font-size:0.9rem; color:var(--muted);">Ideal cavity calculation gives higher values (~10.6 Hz fundamental). Real ionosphere is lossy, lowering the observed peaks.</p>
+    </section>
+
+    <section class="sources">
+      <h2>Public sources</h2>
+      <ul>
+        <li><a href="https://sosrff.tsu.ru/" target="_blank" rel="noopener">Tomsk State University — Space Observing System</a> (primary public spectrogram source for many sites)</li>
+        <li><a href="https://www.heartmath.org/research/global-coherence/gcms-live-data/" target="_blank" rel="noopener">HeartMath Global Coherence Monitoring System</a> (distributed magnetometers)</li>
+        <li><a href="https://meteoagent.com/" target="_blank" rel="noopener">MeteoAgent</a> (space weather + Schumann tracking)</li>
+        <li><a href="https://www.swpc.noaa.gov/" target="_blank" rel="noopener">NOAA Space Weather Prediction Center</a> (Kp, solar wind, flares — related context)</li>
+      </ul>
+      <p style="margin-bottom:0; font-size:0.9rem; color:var(--muted);">Different stations and processing methods produce slightly different numbers. Always check the source timestamp and methodology.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>PDragonLabs</strong> · Schumann room</p>
+    <p>
+      <a href="https://pdragonlabs.github.io/station/">Station</a> ·
+      <a href="https://github.com/PDragonLabs/schumann">Repo</a> ·
+      <a href="https://github.com/PDragonLabs">GitHub</a> ·
+      <a href="https://linktr.ee/pdragonlabs">Links</a>
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-day & Sources · Schumann · PDragonLabs</title>
+  <meta name="description" content="Current available Schumann and space-weather spectrograms and multi-day views. Tomsk placeholder included.">
+  <meta property="og:title" content="Multi-day Sources · Schumann · PDragonLabs">
+  <meta property="og:image" content="https://pdragonlabs.github.io/schumann/schumann-og.jpg">
+  <style>
+    :root {
+      --bg: #0a0614; --surface: #140c22; --text: #e8e0f5; --muted: #9a8bb8;
+      --accent: #c084fc; --accent2: #f0b429; --border: #2a1f3d;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(ellipse at top, #1a0f2e 0%, var(--bg) 60%); color: var(--text); line-height: 1.6; }
+    nav { text-align: center; padding: 1rem; background: rgba(20,12,34,0.7); border-bottom: 1px solid var(--border); }
+    nav a { color: var(--accent); text-decoration: none; margin: 0 0.8rem; font-weight: 500; }
+    nav a:hover { text-decoration: underline; }
+    header { text-align: center; padding: 2.5rem 1.5rem 1.5rem; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 0.4rem;
+      background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .subtitle { color: var(--muted); margin: 0; }
+    main { max-width: 980px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+    section { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.6rem 1.5rem; margin-bottom: 1.5rem; }
+    h2 { margin-top: 0; color: var(--accent); }
+    .graph-wrap { text-align: center; background: #000; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); padding: 0.5rem; margin: 1rem 0; }
+    .graph-wrap img { max-width: 100%; height: auto; border-radius: 8px; }
+    .fallback { display: none; padding: 2rem; color: var(--muted); font-size: 0.95rem; }
+    .graph-wrap img[src=""] + .fallback, .graph-wrap.broken .fallback { display: block; }
+    .links a { color: var(--accent); }
+    .links li { margin: 0.5rem 0; }
+    .note { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem; }
+    footer { text-align: center; padding: 2rem 1rem 3rem; color: var(--muted); font-size: 0.9rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="page2.html">Nagycenk</a>
+    <a href="page3.html">Multi-day Sources</a>
+  </nav>
+
+  <header>
+    <h1>Multi-day & Live Sources</h1>
+    <p class="subtitle">What’s currently available · Tomsk placeholder ready</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Nagycenk (Hungary) — live daily</h2>
+      <p>Still the most reliable public spectrogram + amplitude/frequency plot right now.</p>
+      <div class="graph-wrap" id="nck-wrap">
+        <img src="https://nckobs.hu/data/sr/SR_dynspec_codemo_latest.png" alt="Nagycenk latest SR plot" 
+             onerror="this.parentElement.classList.add('broken'); this.style.display='none';">
+        <div class="fallback">Nagycenk image unavailable right now. Check the official page.</div>
+      </div>
+      <p class="note">Source: <a href="https://nckobs.hu/data/sr/" target="_blank" rel="noopener">nckobs.hu/data/sr/</a> · auto-updates</p>
+    </section>
+
+    <section>
+      <h2>Tomsk multi-day strip (placeholder)</h2>
+      <p>The classic multi-day spectrogram strips (like the June 2026 example) come from Tomsk / sos70.ru. That station has been offline since early November due to a hosting outage. This slot is ready for when it returns.</p>
+      <div class="graph-wrap broken">
+        <div class="fallback">Tomsk multi-day spectrogram currently unavailable.<br>Will appear here automatically once the source is back online.<br><small>Last known good period was before ~1–2 Nov 2026.</small></div>
+      </div>
+      <p class="note">When sos70.ru is restored, drop the current multi-day image URL into the <code>src</code> above and remove the <code>broken</code> class.</p>
+    </section>
+
+    <section class="links">
+      <h2>Other current sources</h2>
+      <ul>
+        <li><a href="https://schumann-frequency-today.com/" target="_blank" rel="noopener">Schumann Frequency Today</a> — Tomsk frames when available + clear status</li>
+        <li><a href="https://www.vlf.it/cumiana/livedata.html" target="_blank" rel="noopener">Cumiana (Italy) VLF / ELF live</a> — Renato Romero station</li>
+        <li><a href="https://www.heartmath.org/gci/gcms/live-data/spectrogram-calendar/" target="_blank" rel="noopener">HeartMath GCMS Spectrogram Calendar</a> — multi-site daily spectrograms</li>
+        <li><a href="https://sungeo.net/dashboard" target="_blank" rel="noopener">SunGeo dashboard</a> — aggregated stations + scores</li>
+        <li><a href="https://www.disclosurenews.it/schumann-resonance-today/" target="_blank" rel="noopener">Disclosure News Schumann Today</a> — daily commentary + graphs</li>
+        <li><a href="https://www.spaceweather.gov/communities/space-weather-enthusiasts-dashboard" target="_blank" rel="noopener">NOAA Space Weather Enthusiasts Dashboard</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Recent-days note</h2>
+      <p>Because Tomsk is down, true multi-day strips for the last 3–4 days aren’t available from the usual source. The Nagycenk plot above covers the current day in detail. Other stations (Cumiana, HeartMath network) continue reporting and are linked above.</p>
+      <p class="note">All images on this page use onerror handling so a missing source simply shows a clean message instead of a broken icon.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>PDragonLabs</strong> · Schumann room</p>
+    <p>
+      <a href="index.html">Home</a> ·
+      <a href="page2.html">Nagycenk</a> ·
+      <a href="https://github.com/PDragonLabs/schumann">Repo</a>
+    </p>
+  </footer>
+</body>
+</html>

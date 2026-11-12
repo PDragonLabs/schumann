@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagycenk Graph · Schumann · PDragonLabs</title>
+  <meta name="description" content="Live Schumann Resonance dynamic spectrum and amplitude/frequency plots from Nagycenk Observatory (Hungary).">
+  <meta property="og:title" content="Nagycenk Graph · Schumann Resonance · PDragonLabs">
+  <meta property="og:description" content="Live dynamic spectrum and mode amplitudes from the Nagycenk Geophysical Observatory.">
+  <meta property="og:image" content="https://pdragonlabs.github.io/schumann/schumann-og.jpg">
+  <meta property="og:url" content="https://pdragonlabs.github.io/schumann/page2.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://pdragonlabs.github.io/schumann/schumann-og.jpg">
+  <style>
+    :root {
+      --bg: #0a0614;
+      --surface: #140c22;
+      --text: #e8e0f5;
+      --muted: #9a8bb8;
+      --accent: #c084fc;
+      --accent2: #f0b429;
+      --border: #2a1f3d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(ellipse at top, #1a0f2e 0%, var(--bg) 60%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    nav {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(20,12,34,0.7);
+      border-bottom: 1px solid var(--border);
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+    nav a:hover { text-decoration: underline; }
+    header {
+      text-align: center;
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin: 0 0 0.4rem;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle { color: var(--muted); margin: 0; }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.6rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    h2 { margin-top: 0; color: var(--accent); }
+    .graph-wrap {
+      text-align: center;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      padding: 0.5rem;
+    }
+    .graph-wrap img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .source-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.8rem;
+    }
+    a { color: var(--accent); }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="page2.html">Nagycenk Graph</a>
+  </nav>
+
+  <header>
+    <h1>Nagycenk Live Graph</h1>
+    <p class="subtitle">Széchenyi István Geophysical Observatory (NCK) · Hungary</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Dynamic spectrum + amplitude & frequency</h2>
+      <div class="graph-wrap">
+        <img src="https://nckobs.hu/data/sr/SR_dynspec_codemo_latest.png" alt="Latest Schumann Resonance dynamic spectrum and mode amplitudes/frequencies from Nagycenk Observatory" loading="lazy">
+      </div>
+      <p class="source-note">
+        Auto-updating image from <a href="https://nckobs.hu/data/sr/" target="_blank" rel="noopener">nckobs.hu/data/sr/</a>.<br>
+        Top panels: spectrograms of magnetic (H<sub>NS</sub>, H<sub>EW</sub>) and electric (E<sub>Z</sub>) components.<br>
+        Bottom: amplitude of the first three modes and their frequencies (complex demodulation of E<sub>Z</sub>).
+      </p>
+    </section>
+
+    <section>
+      <h2>About this graph</h2>
+      <p>This is the public automatic plot from the Széchenyi István Geophysical Observatory near Nagycenk, Hungary (IAGA code NCK). It has been monitoring Schumann resonances with a ball antenna since the early 1990s.</p>
+      <p>The style matches the amplitude charts many people follow on sites such as Disclosure News (which also draws from Nagycenk data). The spectrograms show energy across 0–40 Hz; the bright horizontal bands are the resonance modes. The lower plots track how strong each of the first three modes is and where their peak frequencies sit throughout the day.</p>
+      <p>Source: © Széchenyi István Geophysical Observatory. Data is scientific observation, not a global “power” score.</p>
+    </section>
+
+    <section>
+      <h2>Related</h2>
+      <ul>
+        <li><a href="https://nckobs.hu/data/sr/" target="_blank" rel="noopener">Official Nagycenk SR page</a></li>
+        <li><a href="https://www.disclosurenews.it/schumann-resonance-today/" target="_blank" rel="noopener">Disclosure News Schumann Today</a> (daily commentary + graphs)</li>
+        <li><a href="index.html">← Back to main Schumann page</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>PDragonLabs</strong> · Schumann room</p>
+    <p><a href="index.html">Home</a> · <a href="https://github.com/PDragonLabs/schumann">Repo</a> · <a href="https://pdragonlabs.github.io/station/">Station</a></p>
+  </footer>
+</body>
+</html>
